@@ -9,10 +9,53 @@
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
+    <link rel="icon" href="./images/favicon.ico" sizes="any" />
+    <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/favicon.png" />
   </head>
   <body class="page">
-    <header class="header"></header>
-    <main></main>
+    <header class="header width">
+      <h1 class="header-title">&lt/html&gt</h1>
+      <p class="header-subtitle">закрывающий тег</p>
+    </header>
+    <main class="content width">
+      <section class="card">
+        <h2 class="card-title">
+          Фритрек и нулевой спринт: Подготовка к работе
+        </h2>
+        <div class="image-cover">
+          <span></span>
+          <img
+            class="card-image"
+            src="images/image 1.jpg"
+            loading="lazy"
+            alt="Человек идет в гору, чтобы покорить её вершину"
+          />
+        </div>
+        <div class="card-content">
+          <p>
+            Это было самое начало пути. На этом этапе важно было проникнуться
+            основами и настроиться на учёбу. И, возможно, подумать, как новые
+            знания могут повлиять на ваше будущее.
+          </p>
+          <p>
+            Я с детства была творческим человеком, но с технарским складом ума.
+            В школе мне нравилась математика. Однако к информатике особо
+            интереса я не питала. И выбрала в итоге вообще другое направление,
+            не связанное ни с тем, ни с другим. Сейчас, поработав несколько лет
+            по данной профессии, я поняла, что она мне не подходит. Мне нравится
+            именно сфера ИТ. И решительно настроилась поменять сферу
+            деятельности и встала на путь постижения фронтенд-разработки.
+          </p>
+        </div>
+        <button
+          class="card__icon-button"
+          type="button"
+          aria-label="Иконка сердечка для лайка"
+        ></button>
+        <button class="card__like-button"></button>
+      </section>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
