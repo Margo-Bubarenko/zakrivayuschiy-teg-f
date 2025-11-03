@@ -10,8 +10,24 @@
 
 */
 
-
-
-button:not(.card__icon-button)::before {
-  transition: transform 0.5s ease-in-out;
+@keyframes scale-animation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
+  }
 }
+
+@keyframes sparks-opacity-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
