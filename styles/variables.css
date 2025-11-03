@@ -11,4 +11,9 @@
   --padding: calc(clamp(122px, 119.18px + 0.75vw, 130px) - 2px) clamp(16px, -21.50px + 10.00vw, 122.5px); /* из паддинга верха и низа вычла по 2 пикселя ширины рамки*/
   --content-width: clamp(375px, 260.56px + 30.52vw, 700px);
   --border: 2px solid rgba(0 0 0 / 1);
+  --heart-contour-color: #000;
+  --main-heart-color: #f00;
+  --hover-heart-color: #000;
+  --button-shadow: rgba(0 0 0 / 1);
 }
+

@@ -12,18 +12,18 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-  font-family: var(--main-font-family);
-  background-image: var(--background-image);
-  background-color: var(--background-color);
-  background-size: cover;
-  background-attachment: fixed;
-  block-size: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  font-family: var(--main-font-family);
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  block-size: 100%;
 }
 
 .width {
@@ -31,19 +31,19 @@
 }
 
 .header {
-  font-family: var(--secondary-font-family);
-  text-transform: uppercase;
-  background-color: var(--background-color);
-  text-align: center;
   margin-block-start: 100px;
   margin-block-end: 98px;
   border: var(--border);
   padding: var(--padding);
+  font-family: var(--secondary-font-family);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--background-color);
 }
 
 .header-title {
-  font-size: var(--header-title-size);
   margin-block-end: 20px;
+  font-size: var(--header-title-size);
 }
 
 .header-subtitle {
@@ -56,9 +56,13 @@
   border-block-end: var(--border);
 }
 
+.content {
+  margin-block-end: 48px;
+}
+
 .card {
-  background-color: var(--background-color);
   border: var(--border);
+  background-color: var(--background-color);
 }
 
 .card-image {
@@ -78,3 +82,111 @@
   padding: 25px;
 }
 
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border 0.3s ease;
+  border: solid 2px transparent;
+}
+
+.card__icon-button:focus,
+button:not(.card__icon-button):focus  {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: solid 2px var(--button-shadow);
+}
+
+button { /* это тег */
+  border: none;
+  font-family: var(--secondary-font-family);
+  font-size: 14px;
+  line-height: 90%;
+  background-color: transparent;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+button:not(.card__icon-button):focus-visible {
+  box-shadow: 2px 2px 0 var(--button-shadow);
+  outline: none;
+}
+
+.button { /* это класс */
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 8px;
+   /* вычла 2рх из-за рамки */
+}
+
+button:not(.card__icon-button)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--button-shadow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+button:not(.card__icon-button):hover::before {
+  transform: scaleX(1);
+}
+
+button:not(.card__icon-button) .button__text {
+  z-index: 10;
+  color: var(--background-color);
+  mix-blend-mode: difference;
+}
+
+.card-buttons {
+  padding: 0 25px 25px;
+}
+
+.card__like-button {
+  width: 130px; /* в макете ширина и высота фиксированы */
+  height: 40px;
+  border: var(--border);
+}
+
+svg .sparks {
+  opacity: 0;
+}
+
+.footer-button {
+  min-width: 306px;
+  min-height: 84px;
+  background-color: var(--background-color);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: var(--border);
+  margin-block-end: 98px; /* вычла толщину рамки */
+
+  @media (width >= 768px) {
+    flex-direction: row;
+    min-width: 335px;
+    min-height: 55px;
+  }
+}
+
+@media (width <= 375px) {
+  .footer-button {
+    flex-direction: column;
+  }
+
+  .footer-button svg {
+    block-size: 2em;
+  }
+
+  .popup {
+    inline-size: 100%;
+    padding: 30px 40px;
+  }
+}

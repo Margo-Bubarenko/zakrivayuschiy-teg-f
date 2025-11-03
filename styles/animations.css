@@ -9,3 +9,9 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+
+
+button:not(.card__icon-button)::before {
+  transition: transform 0.5s ease-in-out;
+}
