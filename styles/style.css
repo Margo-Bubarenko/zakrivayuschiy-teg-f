@@ -50,7 +50,6 @@
   font-size: var(--header-subtitle-size);
 }
 
-/*не забудь про бордеры у картинок*/
 .image-cover {
   border-block-start: var(--border);
   border-block-end: var(--border);
@@ -263,4 +262,9 @@ svg .sparks {
     inline-size: 100%;
     padding: 30px 40px;
   }
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
 }
