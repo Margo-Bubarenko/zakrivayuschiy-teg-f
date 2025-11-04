@@ -51,15 +51,35 @@
 }
 
 .image-cover {
+  position: relative;
+  display: flex;
   border-block-start: var(--border);
   border-block-end: var(--border);
-  display: flex;  
+}
+
+.logo {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1;
+  opacity: 50%;
+  font-family: var(--secondary-font-family);
+  font-size: 14px;
+}
+
+@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .logo {
+    text-shadow: none;
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+  }
 }
 
 .content {
-  margin-block-end: 48px;
   display: grid;
   gap: 50px;
+  margin-block-end: 48px;
 }
 
 .card {
@@ -80,8 +100,8 @@
 .card-title {
   padding: 4px 10px;
   font-family: var(--main-font-family);
-  font-size: 18px;
   font-weight: 715;
+  font-size: 18px;
 }
 
 .card-content {
@@ -94,12 +114,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: border 0.3s ease;
   border: solid 2px transparent;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus,
-button:not(.card__icon-button):focus  {
+button:not(.card__icon-button):focus {
   outline: none;
 }
 
@@ -107,14 +127,15 @@ button:not(.card__icon-button):focus  {
   border: solid 2px var(--button-shadow);
 }
 
-button { /* это тег */
+button {
+  /* это тег */
+  position: relative;
   border: none;
   font-family: var(--secondary-font-family);
   font-size: 14px;
   line-height: 90%;
   background-color: transparent;
   transition: box-shadow 0.3s ease;
-  position: relative;
 }
 
 button:not(.card__icon-button):focus-visible {
@@ -122,25 +143,26 @@ button:not(.card__icon-button):focus-visible {
   outline: none;
 }
 
-.button { /* это класс */
+.button {
+  /* это класс */
   display: flex;
   flex-direction: row;
   justify-content: end;
   gap: 8px;
-   /* вычла 2рх из-за рамки */
+  /* вычла 2рх из-за рамки */
 }
 
 button:not(.card__icon-button)::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: var(--button-shadow);
+  transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.5s ease-in-out;
 }
 
 button:not(.card__icon-button):hover::before {
@@ -148,6 +170,12 @@ button:not(.card__icon-button):hover::before {
 }
 
 button:not(.card__icon-button) .button__text {
+  z-index: 10;
+  color: var(--background-color);
+  mix-blend-mode: difference;
+}
+
+button:not(.card__icon-button) .icon {
   z-index: 10;
   color: var(--background-color);
   mix-blend-mode: difference;
@@ -233,14 +261,14 @@ svg .sparks {
 }
 
 .footer-button {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-width: 306px;
   min-height: 84px;
-  background-color: var(--background-color);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: var(--border);
   margin-block-end: 98px; /* вычла толщину рамки */
+  border: var(--border);
+  background-color: var(--background-color);
 
   @media (width >= 768px) {
     flex-direction: row;
@@ -258,13 +286,62 @@ svg .sparks {
     block-size: 2em;
   }
 
-  .popup {
-    inline-size: 100%;
+  .dialog {
     padding: 30px 40px;
+    inline-size: 100%;
   }
 }
 
 .icon {
   width: 28px;
   height: 28px;
+
+  @media (width >= 768px) {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.icon-dialog {
+  width: 39px;
+  min-width: 39px;
+  height: 39px;
+}
+
+.dialog {
+  width: clamp(341px, 336, 77px + 1, 13vw, 353px);
+  border: var(--border);
+  padding: 30px 40px;
+
+  @media (width >= 768px) {
+    padding: 30px;
+  }
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: clamp(261px, 249,73px + 3,00vw, 293px);
+}
+
+.dialog__text {
+  font-family: var(--secondary-font-family);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  inline-size: 100%;
+}
+
+.dialog-button {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 38px;
+  margin-block-start: 30px;
+  border: var(--border);
 }
