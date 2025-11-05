@@ -94,9 +94,36 @@
   object-fit: cover;
 }
 
-.checkpoint {
-  filter: invert(0.7);
+.brightness {
+  filter: brightness(0.5);
 }
+
+.contrast {
+  filter: contrast(1.5);
+}
+
+.mixfilter {
+  filter: grayscale(1) blur(0.2rem) invert(0.7);
+}
+
+.sepia {
+  filter: sepia(1);
+}
+
+.saturate {
+  filter: saturate(2);
+}
+
+.opacity {
+  filter: opacity(0.2);
+}
+
+.hue-rotate {
+  filter: hue-rotate(90deg);
+}
+.blur {
+  filter: blur(1.5rem);
+} 
 
 .card-title {
   padding: 4px 10px;
