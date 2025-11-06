@@ -132,9 +132,11 @@
 }
 
 .card-content {
-  display: grid;
-  gap: 25px;
   padding: 25px;
+}
+
+.card-content p:not(:last-child) {
+  margin-block-end: 25px;
 }
 
 .card__icon-button {
