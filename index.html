@@ -19,7 +19,7 @@
       <p class="header-subtitle">закрывающий тег</p>
     </header>
     <main class="content width">
-      <section class="card">
+      <article class="card">
         <h2 class="card-title">
           Фритрек и нулевой спринт: Подготовка к работе
         </h2>
@@ -62,6 +62,7 @@
               height="36"
               fill="none"
               viewBox="0 0 39 36"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -95,8 +96,8 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
-      <section class="card">
+      </article>
+      <article class="card">
         <h2 class="card-title">1 спринт: Я — чистый лист</h2>
         <div class="image-cover">
           <span class="logo" aria-label="закрывающий тег html"
@@ -137,6 +138,7 @@
               height="36"
               fill="none"
               viewBox="0 0 39 36"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -170,8 +172,8 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
-      <section class="card">
+      </article>
+      <article class="card">
         <h2 class="card-title">1 спринт: А если не получится?</h2>
         <div class="image-cover">
           <span class="logo" aria-label="закрывающий тег html"
@@ -207,6 +209,7 @@
               height="36"
               fill="none"
               viewBox="0 0 39 36"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -240,8 +243,8 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
-      <section class="card">
+      </article>
+      <article class="card">
         <h2 class="card-title">2 спринт: Погоня за идеалом</h2>
         <div class="image-cover">
           <span class="logo" aria-label="закрывающий тег html"
@@ -282,6 +285,7 @@
               height="36"
               fill="none"
               viewBox="0 0 39 36"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -315,8 +319,8 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
-      <section class="card">
+      </article>
+      <article class="card">
         <h2 class="card-title">2 спринт: О тех, кто рядом</h2>
         <div class="image-cover">
           <span class="logo" aria-label="закрывающий тег html"
@@ -361,6 +365,7 @@
               height="36"
               fill="none"
               viewBox="0 0 39 36"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -394,8 +399,8 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
-      <section class="card">
+      </article>
+      <article class="card">
         <h2 class="card-title">3 спринт: Обходные стратегии</h2>
         <div class="image-cover">
           <span class="logo" aria-label="закрывающий тег html"
@@ -434,6 +439,7 @@
               height="36"
               fill="none"
               viewBox="0 0 39 36"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -467,8 +473,8 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
-      <section class="card">
+      </article>
+      <article class="card">
         <h2 class="card-title">3 спринт: Когда опускаются руки</h2>
         <div class="image-cover">
           <span class="logo" aria-label="закрывающий тег html"
@@ -508,6 +514,7 @@
               height="36"
               fill="none"
               viewBox="0 0 39 36"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -541,8 +548,8 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
-      <section class="card">
+      </article>
+      <article class="card">
         <h2 class="card-title">«Сейчас я здесь»</h2>
         <div class="image-cover">
           <span class="logo" aria-label="закрывающий тег html"
@@ -578,6 +585,7 @@
               height="36"
               fill="none"
               viewBox="0 0 39 36"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -611,27 +619,26 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <button
+      </article>
+      <div class="footer">
+        <button
         class="button footer-button"
         type="button"
         onclick="window['insert-floppy'].showModal()"
-        aria-controls="insert-floppy"
-      >
-        <svg class="icon" width="28" height="28" viewBox="0 0 39 39">
-          <use href="./svg/floppy.svg#save-icon"></use>
-        </svg>
-        <span class="button__text">Сохранить на память</span>
-      </button>
-    </footer>
+        aria-controls="insert-floppy">
+          <svg class="icon" width="28" height="28" viewBox="0 0 39 39">
+            <use href="./svg/floppy.svg#save-icon"></use>
+          </svg>
+          <span class="button__text">Сохранить на память</span>
+        </button>
+      </div>    
+    </main>
     <dialog id="insert-floppy" class="dialog">
       <div class="dialog-header">
         <svg class="icon-dialog" width="28" height="28" viewBox="0 0 39 39">
           <use href="./svg/floppy.svg#save-icon"></use>
         </svg>
-        <span class="dialog__text">Вставьте дискету, чтобы продолжить</span>
+        <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
       </div>
       <button
         class="button dialog-button"

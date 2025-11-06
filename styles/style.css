@@ -67,6 +67,11 @@
   opacity: 50%;
   font-family: var(--secondary-font-family);
   font-size: 14px;
+  text-shadow: 
+    -1px 0 #fff,
+    0 1px #fff,
+    1px 0 #fff,
+    0 -1px #fff;
 }
 
 @supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
@@ -80,7 +85,7 @@
 .content {
   display: grid;
   gap: 50px;
-  margin-block-end: 48px;
+  margin-block-end: 100px;
 }
 
 .card {
@@ -289,13 +294,16 @@ svg .sparks {
   transform-origin: center;
 }
 
+.footer {
+  margin: 0 auto;
+}
+
 .footer-button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 306px;
   min-height: 84px;
-  margin-block-end: 98px; /* вычла толщину рамки */
   border: var(--border);
   background-color: var(--background-color);
 
