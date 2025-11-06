@@ -134,10 +134,13 @@
   font-family: var(--main-font-family);
   font-variation-settings: 'wght' var(--weight-bold), 'wdth' var(--width);
   font-size: 18px;
+  line-height: 100%;
 }
 
 .card-content {
   padding: 25px;
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .card-content p:not(:last-child) {
